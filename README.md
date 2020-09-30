@@ -69,7 +69,7 @@ Java 8 and Springboot 2.3.4.RELEASE
   - [GET /](#get-question)
   - [POST /](#post-answertoquestion)
 
-### GET /
+### GET / Get question for adding two randowm positive numbers
 
 Example: http://localhost:8080/
 
@@ -78,18 +78,20 @@ Request header:
     user-id:<value>
 
 Response body:
-   For Httpstatus Ok
+    
+    For Httpstatus - Ok
    
     {
       "question": "Please sum the numbers 54,85"
     }
-   For Httpstatus Bad Request
+    
+    For Httpstatus - Bad Request
    
     {
       "message": "Missing request header 'user-id' for method parameter of type String"
     }
 
-### POST /
+### POST / Verify the answer to the question given by the server
 
 Example: http://localhost:8080/
 
@@ -105,12 +107,14 @@ Request body:
     }
 
 Response body:
-   For Httpstatus Ok
+    
+    For Httpstatus - Ok
    
     {
       "message": "That’s great."
     }
-   For Httpstatus Bad Request
+   
+    For Httpstatus - Bad Request
    
     {
       "message": "Missing request header 'user-id' for method parameter of type String"
