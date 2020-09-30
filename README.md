@@ -13,16 +13,16 @@
    **Service:** That’s great<br/>
 ## Developing
 
-### Built With
+## Built With
 Java 8 and Springboot 2.3.4.RELEASE
 
 ## Prerequisites
-# Step 1: Download JDK
+### Step 1: Download JDK
       1. Goto Java SE download site @ http://www.oracle.com/technetwork/java/javase/downloads/index.html.
       2. Under "Java Platform, Standard Edition" ⇒ "Java SE 8" ⇒ Click the "JDK Download" link.
       3. Under "Java SE Development Kit 8" ⇒ Check "Accept License Agreement".
       4. Choose the JDK for your operating system, i.e., "Windows". Download the "exe" installer (e.g., "jdk-8u261-windows-x64.exe").
-# Step 2: Install JDK
+### Step 2: Install JDK
       Run the downloaded installer (e.g., "jdk-8u261-windows-x64.exe"), which installs both the JDK and JRE.
       
       By default, JDK is installed in directory "C:\Program Files\Java\jdk1.8.0_60". Accept the defaults and follow the screen instructions to install JDK.
@@ -30,7 +30,7 @@ Java 8 and Springboot 2.3.4.RELEASE
       Use your "File Explorer", navigate to "C:\Program Files\Java" to inspect the sub-directories. Take note of your JDK installed directory jdk1.8.0_60, in particular, the
       update number {x}, which you will need in the next step.
       
-# Step 3: Include JDK's "bin" Directory in the PATH
+### Step 3: Include JDK's "bin" Directory in the PATH
       Windows' Command Prompt (CMD) searches the current directory and the directories listed in the PATH environment variable (or system variable) for executable programs.
       JDK's programs (such as Java compiler "javac.exe" and Java runtime "java.exe") reside in the sub-directory "bin" of the JDK installed directory. You need to include JDK's
       "bin" in the PATH to run the JDK programs.
@@ -51,7 +51,7 @@ Java 8 and Springboot 2.3.4.RELEASE
       Variable name  : PATH
       Variable value : c:\Program Files\Java\jdk1.8.0_60\bin;[do not delete exiting entries...]
    Note: If you have started CMD, you need to re-start for the new environment settings to take effect.
-# Step 4: Verify the JDK Installation
+### Step 4: Verify the JDK Installation
       Launch a CMD via one of the following means:
 
          1. Click "Search" button ⇒ Type "cmd" ⇒ Choose "Command Prompt", or
@@ -62,3 +62,95 @@ Java 8 and Springboot 2.3.4.RELEASE
             java version "1.8.0_60"
             Java(TM) SE Runtime Environment (build 1.8.0_60-b27)
             Java HotSpot(TM) 64-Bit Server VM (build 25.60-b23, mixed mode)
+## Request & Response Examples
+
+### API Resources
+
+  - [GET /magazines](#get-magazines)
+  - [GET /magazines/[id]](#get-magazinesid)
+  - [POST /magazines/[id]/articles](#post-magazinesidarticles)
+
+### GET /magazines
+
+Example: http://example.gov/api/v1/magazines.json
+
+Response body:
+
+    {
+        "metadata": {
+            "resultset": {
+                "count": 123,
+                "offset": 0,
+                "limit": 10
+            }
+        },
+        "results": [
+            {
+                "id": "1234",
+                "type": "magazine",
+                "title": "Public Water Systems",
+                "tags": [
+                    {"id": "125", "name": "Environment"},
+                    {"id": "834", "name": "Water Quality"}
+                ],
+                "created": "1231621302"
+            },
+            {
+                "id": 2351,
+                "type": "magazine",
+                "title": "Public Schools",
+                "tags": [
+                    {"id": "125", "name": "Elementary"},
+                    {"id": "834", "name": "Charter Schools"}
+                ],
+                "created": "126251302"
+            }
+            {
+                "id": 2351,
+                "type": "magazine",
+                "title": "Public Schools",
+                "tags": [
+                    {"id": "125", "name": "Pre-school"},
+                ],
+                "created": "126251302"
+            }
+        ]
+    }
+
+### GET /magazines/[id]
+
+Example: http://example.gov/api/v1/magazines/[id].json
+
+Response body:
+
+    {
+        "id": "1234",
+        "type": "magazine",
+        "title": "Public Water Systems",
+        "tags": [
+            {"id": "125", "name": "Environment"},
+            {"id": "834", "name": "Water Quality"}
+        ],
+        "created": "1231621302"
+    }
+
+
+
+### POST /magazines/[id]/articles
+
+Example: Create – POST  http://example.gov/api/v1/magazines/[id]/articles
+
+Request body:
+
+    [
+        {
+            "title": "Raising Revenue",
+            "author_first_name": "Jane",
+            "author_last_name": "Smith",
+            "author_email": "jane.smith@example.gov",
+            "year": "2012",
+            "month": "August",
+            "day": "18",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ante ut augue scelerisque ornare. Aliquam tempus rhoncus quam vel luctus. Sed scelerisque fermentum fringilla. Suspendisse tincidunt nisl a metus feugiat vitae vestibulum enim vulputate. Quisque vehicula dictum elit, vitae cursus libero auctor sed. Vestibulum fermentum elementum nunc. Proin aliquam erat in turpis vehicula sit amet tristique lorem blandit. Nam augue est, bibendum et ultrices non, interdum in est. Quisque gravida orci lobortis... "
+        }
+    ]
