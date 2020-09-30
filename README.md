@@ -91,7 +91,11 @@ Response body:
 
 ### POST /
 
-Example: Create – POST  http://example.gov/api/v1/magazines/[id]/articles
+Example: http://localhost:8080/
+
+Request header:
+    
+    user-id:<value>
 
 Request body:
 
