@@ -16,13 +16,13 @@
 ### Built With
 Java 8 and Springboot 2.3.4.RELEASE
 
-### Prerequisites
-## Step 1: Download JDK
+## Prerequisites
+# Step 1: Download JDK
       1. Goto Java SE download site @ http://www.oracle.com/technetwork/java/javase/downloads/index.html.
       2. Under "Java Platform, Standard Edition" ⇒ "Java SE 8" ⇒ Click the "JDK Download" link.
       3. Under "Java SE Development Kit 8" ⇒ Check "Accept License Agreement".
       4. Choose the JDK for your operating system, i.e., "Windows". Download the "exe" installer (e.g., "jdk-8u261-windows-x64.exe").
-## Step 2: Install JDK
+# Step 2: Install JDK
       Run the downloaded installer (e.g., "jdk-8u261-windows-x64.exe"), which installs both the JDK and JRE.
       
       By default, JDK is installed in directory "C:\Program Files\Java\jdk1.8.0_60". Accept the defaults and follow the screen instructions to install JDK.
@@ -30,7 +30,7 @@ Java 8 and Springboot 2.3.4.RELEASE
       Use your "File Explorer", navigate to "C:\Program Files\Java" to inspect the sub-directories. Take note of your JDK installed directory jdk1.8.0_60, in particular, the
       update number {x}, which you will need in the next step.
       
-## Step 3: Include JDK's "bin" Directory in the PATH
+# Step 3: Include JDK's "bin" Directory in the PATH
       Windows' Command Prompt (CMD) searches the current directory and the directories listed in the PATH environment variable (or system variable) for executable programs.
       JDK's programs (such as Java compiler "javac.exe" and Java runtime "java.exe") reside in the sub-directory "bin" of the JDK installed directory. You need to include JDK's
       "bin" in the PATH to run the JDK programs.
@@ -51,7 +51,7 @@ Java 8 and Springboot 2.3.4.RELEASE
       Variable name  : PATH
       Variable value : c:\Program Files\Java\jdk1.8.0_60\bin;[do not delete exiting entries...]
    Note: If you have started CMD, you need to re-start for the new environment settings to take effect.
-## Step 4: Verify the JDK Installation
+# Step 4: Verify the JDK Installation
       Launch a CMD via one of the following means:
 
          1. Click "Search" button ⇒ Type "cmd" ⇒ Choose "Command Prompt", or
