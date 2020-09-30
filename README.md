@@ -62,6 +62,39 @@ Java 8 and Springboot 2.3.4.RELEASE
             java version "1.8.0_60"
             Java(TM) SE Runtime Environment (build 1.8.0_60-b27)
             Java HotSpot(TM) 64-Bit Server VM (build 25.60-b23, mixed mode)
+### Step 5: Installing and configuring Maven for build
+         1. Makesure to Install JDK1.8 and Add ‘JAVA_HOME’ Environment Variable.
+         2. Download [Maven](https://apachemirror.sg.wuchna.com/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz)
+         3. Extract the downloaded maven binary into desired drive.
+         4. Include maven "bin" Directory in the PATH
+            4.1. Launch "Control Panel" ⇒ (Optional) "System and Security" ⇒ "System" ⇒ Click "Advanced system settings" on the left pane.
+            4.2. Switch to "Advanced" tab ⇒ Click "Environment Variables" button.
+            4.3. Under "System Variables" (the bottom pane), scroll down to select variable "Path" ⇒ Click "Edit...".
+            4.4. **For Newer Windows 10:**
+            You shall see a TABLE listing all the existing PATH entries (if not, goto next step). Click "New" ⇒ Click "Browse" and navigate to your JDK's "bin" directory, i.e.,
+            "D:\apache-maven-3.6.3\bin", where {x} is your installation update number ⇒ Select "Move Up" to move this entry all the way to the TOP.
+            4.5. **For Older Windows 10** (Time to change your computer!):
+            (CAUTION: Read this paragraph 3 times before doing this step! Don't push "Apply" or "OK" until you are 101% sure. There is no UNDO!!!)
+            (To be SAFE, copy the content of the "Variable value" to Notepad before changing it!!!)
+            In "Variable value" field, APPEND "D:\apache-maven-3.6.3\bin" IN FRONT of all the existing directories, followed by a semi-colon (;) to separate the
+            JDK's bin
+            directory from the rest of the existing directories. DO NOT DELETE any existing entries; otherwise, some existing applications may not run.
+            Variable name  : PATH
+            Variable value : D:\apache-maven-3.6.3\bin;[do not delete exiting entries...]
+         Note: If you have started CMD, you need to re-start for the new environment settings to take effect.
+         5. Verify the Maven Installation
+            Launch a CMD via one of the following means:
+
+            5.1. Click "Search" button ⇒ Type "cmd" ⇒ Choose "Command Prompt", or
+            5.2. Right-click "Start" button ⇒ run... ⇒ enter "cmd", or
+            5.3. Click "Start" button ⇒ Windows System ⇒ Command Prompt
+         Issue the following commands to verify your Maven installation:         
+         1. mvn -version, after hit enter you can see the installed and configured maven version for the build.
+## Steps to start
+   1. Create a folder called "excerise-test" on D:/ drive and copy the excercise-0.0.1-SNAPSHOT.jar and start-application.bat which is downloaded from the shared git repository.
+   2. The start-application.bat file is to run the application which have instruction "java -Dserver.port=8080 -jar excercise-0.0.1-SNAPSHOT.jar".
+   3. If you want to run the application on another port, edit the start-application.bat file and update the parameter -Dserver.port=<>.
+   4. That executable jar starts the embeded tomcat container on port 8080 and deploys the application.
 ## Request & Response Examples
 
 ### API Resources
@@ -123,3 +156,5 @@ Response body:
     {
       "message": "That’s wrong. Please try again."
     }
+## Missing items
+Test cases for services are incomplete.
