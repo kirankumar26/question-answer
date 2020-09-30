@@ -93,8 +93,8 @@ Java 8 and Springboot 2.3.4.RELEASE
 ## Steps to start
    1. Create a folder called "excerise-test" on D:/ drive and copy the excercise-0.0.1-SNAPSHOT.jar and start-application.bat which is downloaded from the shared git repository.
    2. The start-application.bat file is to run the application which have instruction "java -Dserver.port=8080 -jar excercise-0.0.1-SNAPSHOT.jar".
-   3. If you want to run the application on another port, edit the start-application.bat file and update the parameter -Dserver.port=<>.
-   4. That executable jar starts the embeded tomcat container on port 8080 and deploys the application.
+   3. If you want to run the application on another port, edit the start-application.bat file and update the parameter "***-Dserver.port=<>***".
+   4. The executable jar starts the embeded tomcat container on port 8080 and deploys the application.
 ## Application API Endpoints
 
 ### API Resources
