@@ -8,8 +8,6 @@ import com.coding.excercise.service.QuestionarieService;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
@@ -19,7 +17,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class QuestionarieServiceImpl implements QuestionarieService {
-  private static final Logger logger = LoggerFactory.getLogger(com.coding.excercise.service.QuestionarieServiceImpl.class);
   
   @Autowired
   CacheManager cacheManager;
@@ -41,7 +38,7 @@ public class QuestionarieServiceImpl implements QuestionarieService {
       responseBo.setMessage("Thatgreat");
       return responseBo;
     } 
-    throw new ExcerciseException("Thatwrong. Please try again.", HttpStatus.BAD_REQUEST);
+    throw new ExcerciseException("That's wrong. Please try again.", HttpStatus.BAD_REQUEST);
   }
   
   public int sumOfNumbers(String question) {
@@ -61,10 +58,9 @@ public class QuestionarieServiceImpl implements QuestionarieService {
   private boolean validateQuestionCorrectness(String question, String userId) {
     Cache cache = this.cacheManager.getCache("questionarie");
     QuestionarieBo questionarie = (QuestionarieBo)cache.get(userId).get();
-    logger.info("Previous question : " + questionarie.getQuestion());
-    logger.info("Answer question : " + question);
-    if (null != questionarie && questionarie.getQuestion().equals(question))
+    if (null != questionarie && questionarie.getQuestion().equals(question)) {
       return true; 
+	}
     return false;
   }
 }
